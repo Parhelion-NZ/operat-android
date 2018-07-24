@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/form_introduction_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp">
+
+    <TextView
+        android:id="@+id/TextViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/form_description"
+        android:textSize="10pt">
+    </TextView>
+    <TextView
+        android:id="@+id/TextViewMeshblock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meshblock: "
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="10pt">
+    </TextView>
+    <TextView
+        android:id="@+id/TextViewNumProperties"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Number of properties: "
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="10pt">
+    </TextView>
+
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start"
+        android:layout_gravity="bottom"
+       />
+
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    <FrameLayout
+        android:id="@+id/simple_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="2">
+
+        <fragment
+            android:id="@+id/details_map"
+            android:name="com.google.android.gms.maps.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            app:cameraZoom="13"
+            app:liteMode="true"
+            app:mapType="normal" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/all_common_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_weight="1"
+        android:layout_margin="5dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/details_text"/>
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="*">
+
+                <TableRow>
+                    <TextView
+                        android:layout_column="0"
+                        android:text="@string/no_of_properties"
+                        android:padding="3dip"
+                        android:gravity="left"
+                        android:layout_width="wrap_content"/>
+                    <TextView
+                        android:text=""
+                        android:id="@+id/details_no_of_properties"
+                        android:gravity="left"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_column="0"
+                        android:text="@string/operat_score"
+                        android:padding="3dip"
+                        android:gravity="left"
+                        android:layout_width="wrap_content"/>
+                    <TextView
+                        android:text=""
+                        android:id="@+id/details_operat_score"
+                        android:gravity="left"
+                        android:padding="3dip" />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

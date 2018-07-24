@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="#2e2b2b"
+            android:layout_marginBottom="10dp"
+            android:text="Show scores : "/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/popup_operat_score"
+            android:drawablePadding="16dp"
+            android:layout_marginBottom="7dp"
+            android:drawableLeft="@drawable/places_ic_search"
+            android:text="@string/operat_score"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/popup_navigation_score"
+            android:drawablePadding="16dp"
+            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+            android:text="@string/navigation_score"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/popup_territorial_score"
+            android:drawablePadding="16dp"
+            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+            android:text="@string/territorial_score"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/popup_natural_elements_score"
+            android:drawablePadding="16dp"
+            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+            android:text="@string/natural_elements_score"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/popup_incivilities_score"
+            android:drawablePadding="16dp"
+            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+            android:text="@string/incivilities_score"/>
+    </LinearLayout>
+
+</LinearLayout>

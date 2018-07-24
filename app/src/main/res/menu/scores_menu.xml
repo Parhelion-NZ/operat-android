@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_operat_score"
+
+        android:title="@string/operat_score"
+ />
+    <item android:id="@+id/action_incivilities_score"
+        android:title="@string/incivilities_score"
+ />
+    <item android:id="@+id/action_navigation_score"
+        android:title="@string/navigation_score"
+ />
+</menu>

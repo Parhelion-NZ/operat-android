@@ -1,0 +1,126 @@
+[
+  {
+    "featureType": "administrative",
+    "stylers": [{
+      "visibility": "off"
+    }]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "geometry",
+    "stylers": [{
+      "color": "#EEEEEE"
+    },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "labels.text",
+    "stylers": [{
+      "visibility": "on"
+    }]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "geometry.fill",
+    "stylers": [{
+      "visibility": "on"
+    }]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "geometry.stroke",
+    "stylers": [{
+      "visibility": "on"
+    }]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text",
+    "stylers": [{
+      "visibility": "on"
+    }]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels",
+    "stylers": [{
+      "visibility": "on"
+    }]
+  },
+  {
+    "featureType": "landscape",
+    "stylers": [{
+      "color": "#E9EBE7"
+    }]
+  },
+  {
+    "featureType": "landscape.man_made",
+    "stylers": [{
+      "visibility": "off"
+    }]
+  },
+  {
+    "featureType": "landscape.man_made",
+    "elementType": "geometry.fill",
+    "stylers": [{
+      "color": "#d169cf"
+    }]
+  },
+  {
+    "featureType": "landscape.man_made",
+    "elementType": "geometry.stroke",
+    "stylers": [{
+      "color": "#ffeb3b"
+    }]
+  },
+  {
+    "featureType": "landscape.natural.terrain",
+    "stylers": [{
+      "visibility": "off"
+    }]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [{
+      "visibility": "off"
+    }]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry.fill",
+    "stylers": [{
+      "color": "#dcdcdc"
+    },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry.fill",
+    "stylers": [{
+      "color": "#e1e1e1"
+    },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [{
+      "visibility": "off"
+    }]
+  },
+  {
+    "featureType": "water",
+    "stylers": [{
+      "color": "#C5C5C5"
+    }]
+  }
+]
