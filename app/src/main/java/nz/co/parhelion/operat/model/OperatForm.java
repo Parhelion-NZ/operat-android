@@ -2,6 +2,9 @@ package nz.co.parhelion.operat.model;
 
 import android.arch.lifecycle.ViewModel;
 
+import nz.co.parhelion.operat.OperatApplication;
+import nz.co.parhelion.operat.R;
+
 public class OperatForm extends ViewModel {
 
     public long meshblockId;
@@ -11,15 +14,47 @@ public class OperatForm extends ViewModel {
 
     public boolean q1, q2, q3, q4, q5, q6, q7;
 
-    public enum Q8 {NONE, ONE_TO_ELEVEN, TWELVE_OR_MORE;}
+    public enum Q8 {
+        NONE(R.string.q8_none), ONE_TO_ELEVEN(R.string.q8_one_to_eleven), TWELVE_OR_MORE(R.string.q8_twelve_or_more);
 
-    public Q8 q8;    // {0 == x = 0, 1 == 1 <= x <= 11, 2 == x >= 12}
+        private int name;
 
-    public enum Q9 {RESIDENTS, NOT_RESIDENTS};
+        Q8(int name) {
+            this.name = name;
+        }
 
+        public String toString() {
+            return OperatApplication.getContext().getString(name);
+        }
+    }
+
+    public Q8 q8;
+
+    public enum Q9 {
+        RESIDENTS(R.string.q9_residents),
+        NOT_RESIDENTS(R.string.q9_not_residents);
+
+        private int name;
+
+        Q9(int name) {
+            this.name = name;
+        }
+        public String toString() {
+            return OperatApplication.getContext().getString(name);
+        }
+    }
     public Q9 q9;
 
-    public enum Q10 {NO_PAVEMENT, NOT_CONTINUOUS, CONTINUOUS};
+    public enum Q10 {NO_PAVEMENT(R.string.q10_no_pavement), NOT_CONTINUOUS(R.string.q10_not_continuous), CONTINUOUS(R.string.q10_yes);
+        private int name;
+
+        Q10(int name) {
+            this.name = name;
+        }
+        public String toString() {
+            return OperatApplication.getContext().getString(name);
+        }
+    };
 
     public Q10 q10;
 

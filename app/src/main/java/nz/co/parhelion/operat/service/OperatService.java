@@ -18,4 +18,8 @@ public interface OperatService {
     @GET("meshblock")//?lat={latitude}&lng={longitude}
     Call<Meshblock> getMeshblock(@Query("lat") double latitude, @Query("lng") double longitude);
 
+
+    @GET("meshblock/{block}")
+    Call<Result> getMeshblock(@Path("block") long block);
+
 }

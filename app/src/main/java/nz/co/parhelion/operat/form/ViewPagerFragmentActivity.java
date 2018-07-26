@@ -42,6 +42,7 @@ public class ViewPagerFragmentActivity extends FragmentActivity{
         Q6(R.string.q6, R.string.q6_help, Boolean.class, "q6"),
         Q7(R.string.q7, R.string.q7_help, Boolean.class, "q7"),
         Q8(R.string.q8, R.string.q8_help, OperatForm.Q8.class, "q8"),
+        Q9(R.string.q9, R.string.q9_help, OperatForm.Q9.class, "q9"),
         Q10(R.string.q10, R.string.q10_help, OperatForm.Q10.class, "q10"),
         Q11(R.string.q11, R.string.q11_help, OperatForm.Q11.class, "q11"),
         Q12(R.string.q12, R.string.q12_help, OperatForm.Q12.class, "q12");

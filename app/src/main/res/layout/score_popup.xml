@@ -24,8 +24,7 @@
             android:textSize="20sp"
             android:id="@+id/popup_operat_score"
             android:drawablePadding="16dp"
-            android:layout_marginBottom="7dp"
-            android:drawableLeft="@drawable/places_ic_search"
+            android:drawableLeft="@drawable/twotone_trip_origin_24"
             android:text="@string/operat_score"/>
         <TextView
             android:layout_width="wrap_content"
@@ -33,7 +32,7 @@
             android:textSize="20sp"
             android:id="@+id/popup_navigation_score"
             android:drawablePadding="16dp"
-            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+            android:drawableLeft="@drawable/twotone_accessible_24"
             android:text="@string/navigation_score"/>
         <TextView
             android:layout_width="wrap_content"
@@ -41,7 +40,7 @@
             android:textSize="20sp"
             android:id="@+id/popup_territorial_score"
             android:drawablePadding="16dp"
-            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+            android:drawableLeft="@drawable/twotone_store_mall_directory_24"
             android:text="@string/territorial_score"/>
         <TextView
             android:layout_width="wrap_content"
@@ -49,7 +48,7 @@
             android:textSize="20sp"
             android:id="@+id/popup_natural_elements_score"
             android:drawablePadding="16dp"
-            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+            android:drawableLeft="@drawable/twotone_local_florist_24"
             android:text="@string/natural_elements_score"/>
         <TextView
             android:layout_width="wrap_content"
@@ -57,7 +56,7 @@
             android:textSize="20sp"
             android:id="@+id/popup_incivilities_score"
             android:drawablePadding="16dp"
-            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
+            android:drawableLeft="@drawable/twotone_local_shipping_24"
             android:text="@string/incivilities_score"/>
     </LinearLayout>
 

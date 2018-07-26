@@ -49,6 +49,17 @@ public class OperatManager {
 
     }
 
+    public void getMeshblockScores(Meshblock block, Callback<Result> callback) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://operat.co.nz/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        OperatService service = retrofit.create(OperatService.class);
+
+        service.getMeshblock(block.getId()).enqueue(callback);
+    }
+
     public List<Result> getResults(Coordinate lowerLeft, Coordinate upperRight) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://localhost:82/operat/")

@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AlertDialog;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -26,13 +27,16 @@ public class AlertDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         int title = getArguments().getInt("title");
 
+        ScrollView scroll = new ScrollView(getContext());
         TextView view = new TextView(getContext());
         view.setText(getArguments().getInt("text"));
+        scroll.addView(view);
+        view.setPadding(50,50,50,50);
 
         return new AlertDialog.Builder(getActivity())
                 .setIcon(R.drawable.baseline_help_24)
                 .setTitle(title)
-                .setView(view)
+                .setView(scroll)
                 .setPositiveButton("OK"/*R.string.alert_dialog_ok*/,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {

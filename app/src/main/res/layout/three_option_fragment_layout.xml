@@ -13,7 +13,7 @@
         android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
 
-        <Button
+        <!-- Button
             android:id="@+id/option_1"
             android:layout_width="match_parent" android:layout_height="wrap_content"
             android:text="Option 1"
@@ -35,7 +35,7 @@
             android:text="Option 3"
             android:layout_weight="1.0"
             android:layout_margin="25dip"
-            android:layout_below="@+id/option_2"/>
+            android:layout_below="@+id/option_2"/ -->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -45,7 +45,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="40dip"
         android:layout_marginEnd="40dip"
-        android:src="@drawable/ic_action_plus"
+        android:src="@drawable/twotone_help_white_24"
         app:backgroundTint="@color/colorPrimary" />
 
 </RelativeLayout>

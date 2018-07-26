@@ -14,11 +14,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import nz.co.parhelion.operat.R;
 import nz.co.parhelion.operat.model.AlertDialogFragment;
@@ -36,15 +39,14 @@ public class ThreeOptionFragment extends Fragment {
     Class<? extends Enum> options;
     Field formField;
 
+    private List<Button> buttons;
+
     public static <E extends Enum<E>> ThreeOptionFragment newInstance(String question, int number, Class<E> options, Field formField, int helpText) {
         Bundle bundle = new Bundle();
         bundle.putString("question", question);
         bundle.putInt("number", number);
-        System.out.println("CSJM Options for options "+options);
         System.out.println(Arrays.toString(options.getEnumConstants()));
-        bundle.putString("option_1", options.getEnumConstants()[0].toString());
-        bundle.putString("option_2", options.getEnumConstants()[1].toString());
-        bundle.putString("option_3", options.getEnumConstants()[2].toString());
+
         bundle.putString("clazz", options.getName());
         bundle.putString("field", formField.getName());
         bundle.putInt("helpText", helpText);
@@ -60,7 +62,7 @@ public class ThreeOptionFragment extends Fragment {
         form = ViewModelProviders.of(getActivity()).get(OperatForm.class);
 
         System.out.println("On create called with bundle "+savedInstanceState);
-
+        buttons = new ArrayList<>();
 
     }
 
@@ -89,49 +91,54 @@ public class ThreeOptionFragment extends Fragment {
 
 
 
-        final Button option1 = view.findViewById(R.id.option_1);
-        final Button option2 = view.findViewById(R.id.option_2);
-        final Button option3 = view.findViewById(R.id.option_3);
-
-        option1.setText(getArguments().getString("option_1"));
-        option2.setText(getArguments().getString("option_2"));
-        option3.setText(getArguments().getString("option_3"));
-
         try {
             options = (Class<? extends Enum>) Class.forName(getArguments().getString("clazz"));
             formField = form.getClass().getField(getArguments().getString("field"));
+
+            Enum[] optionsArray = options.getEnumConstants();
+            buttons = new ArrayList<>();
+            for (int i = 0; i < optionsArray.length; i++) {
+                final int index = i;
+                final Enum option = optionsArray[i];
+                Button button = new Button(getContext());
+                ((RelativeLayout)view).addView(button);
+                buttons.add(button);
+                button.setText(option.toString());
+
+                button.setId(View.generateViewId());
+
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                if (i == 0) {
+                    params.addRule(RelativeLayout.BELOW, R.id.three_option_question);
+                } else {
+                    params.addRule(RelativeLayout.BELOW, buttons.get(i-1).getId());
+                }
+                params.setMargins(25,25,25,25);
+                button.setLayoutParams(params);
+                button.setTransformationMethod(null);
+
+                /*button.setLayou
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="Option 1"
+                android:layout_weight="1.0"
+                android:layout_margin="25dip"
+                android:layout_below="@+id/three_option_question"*/
+
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        form.setEnum(option);
+                        setButton(index);
+                        advance();
+                    }
+                });
+            }
+
+
         } catch (ClassNotFoundException | ClassCastException |NoSuchFieldException e) {
             e.printStackTrace();
         }
         final ViewPagerFragmentActivity activity = (ViewPagerFragmentActivity) getActivity();
-
-        option1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Enum option = options.getEnumConstants()[0];
-                form.setEnum(option);
-                setButton(0);
-                advance();
-            }
-        });
-        option2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Enum option = options.getEnumConstants()[1];
-                form.setEnum(option);
-                setButton(1);
-                advance();
-            }
-        });
-        option3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Enum option = options.getEnumConstants()[2];
-                form.setEnum(option);
-                setButton(2);
-                advance();
-            }
-        });
 
         FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -192,28 +199,18 @@ public class ThreeOptionFragment extends Fragment {
 
     private void setButton(int button) {
         View view = getView();
-        final Button option1 = view.findViewById(R.id.option_1);
-        final Button option2 = view.findViewById(R.id.option_2);
-        final Button option3 = view.findViewById(R.id.option_3);
-
-        switch (button) {
-            case 0:
-                option1.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                option2.setBackground(null);
-                option3.setBackground(null);
-                break;
-            case 1:
-                option2.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                option1.setBackground(null);
-                option3.setBackground(null);
-                break;
-            case 2:
-                option3.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                option2.setBackground(null);
-                option1.setBackground(null);
-                break;
-
+        if (buttons == null || buttons.isEmpty() || button > buttons.size()) {
+            return;
         }
+
+        for (Button buttonView : buttons) {
+            if (buttons.get(button).equals(buttonView)) {
+                buttonView.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            } else {
+                buttonView.setBackground(null);
+            }
+        }
+
         System.out.println("CSJM buttons updated");
     }
 

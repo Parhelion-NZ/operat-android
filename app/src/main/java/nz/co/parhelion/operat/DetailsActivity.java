@@ -28,10 +28,12 @@ import com.vividsolutions.jts.geom.Polygon;
 import com.vividsolutions.jts.io.ParseException;
 import com.vividsolutions.jts.io.WKTReader;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import nz.co.parhelion.operat.dto.Meshblock;
+import nz.co.parhelion.operat.dto.Result;
 import nz.co.parhelion.operat.form.ViewPagerFragmentActivity;
 import nz.co.parhelion.operat.service.OperatManager;
 import retrofit2.Call;
@@ -103,6 +105,7 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
             public void onResponse(Call<Meshblock> call, Response<Meshblock> response) {
                 try {
                     block = response.body();
+
                     PolygonOptions options = createPoly(block.getWkt());
                     options.fillColor(R.color.overlay);
                     mMap.addPolygon(options);
@@ -132,6 +135,28 @@ public class DetailsActivity extends AppCompatActivity implements OnMapReadyCall
 
                     TextView numProps = (TextView)findViewById(R.id.details_no_of_properties);
                     numProps.setText(Integer.toString(block.getAddresses().size()));
+
+                    mgr.getMeshblockScores(block, new Callback<Result>() {
+
+
+                        @Override
+                        public void onResponse(Call<Result> call, Response<Result> response) {
+                            TextView operatScore = (TextView) findViewById(R.id.details_operat_score);
+                            if (response.code() == 200) {
+
+                                DecimalFormat df = new DecimalFormat("#.0");
+                                operatScore.setText(df.format(response.body().getOperatScore()));
+                            } else {
+                                operatScore.setText("Not yet assessed");
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<Result> call, Throwable t) {
+                            TextView operatScore = (TextView)findViewById(R.id.details_operat_score);
+                            operatScore.setText("Not yet assessed");
+                        }
+                    });
 
                 } catch (ParseException e) {
                     e.printStackTrace();

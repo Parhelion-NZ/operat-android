@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">OPERAT</string>
-    <string name="title_activity_display">Display</string>
+    <string name="title_activity_display">Operat</string>
     <string name="operat_score">Operat Score</string>
     <string name="territorial_score">Territorial Functioning Score</string>
     <string name="navigation_score">Navigation and Mobility Score</string>
@@ -19,11 +19,17 @@
     <string name="q2">Are there sounds of nature?</string>
     <string name="q2_help">Assessors should listen for sounds of nature including birdsong or running water from streams or rivers. Sounds of dogs barking should not be included.</string>
     <string name="q3">Are there clear and easy to read road name signs?</string>
-    <string name="q3_help">Record whether or not there are any road name signs in the meshblock. Yes:Present and clear - there is a road name sign and it is clear and easy to read. No: Not present or present but not clear – there is no road name sign, or there is a road name sign, but it is difficult to read due to dirt, damage or obstruction.</string>
+    <string name="q3_help">Record whether or not there are any road name signs in the meshblock.
+        \n\n
+        Yes:Present and clear - there is a road name sign and it is clear and easy to read.
+        \n\n
+        No: Not present or present but not clear – there is no road name sign, or there is a road name sign, but it is difficult to read due to dirt, damage or obstruction.</string>
     <string name="q4">Are there street lights?</string>
     <string name="q4_help">Where there are street lights in the meshblock this should be recorded by assessors.</string>
     <string name="q5">Are there any unlit alleyways?</string>
-    <string name="q5_help">Assessors should indicate if any unlit alleys are present within the meshblock. Record Yes if there are unlit alleyways. Record No if there are either no alleyways, or the alleyways have lighting</string>
+    <string name="q5_help">Assessors should indicate if any unlit alleys are present within the meshblock.
+        \n\nRecord Yes if there are unlit alleyways.
+        \n\nRecord No if there are either no alleyways, or the alleyways have lighting</string>
     <string name="q6">Are there instances of littering, dog fouling or broken glass? </string>
     <string name="q6_help">Instances of littering include food packaging, multiple cigarettes etc.</string>
     <string name="q7">Are there loud traffic or industrial noises?</string>
@@ -31,26 +37,33 @@
     <string name="q8">Approximate number of vehicles that drove past during assessment?</string>
     <string name="q8_help">The assessor should give an estimation of the number of vehicles that pass during the course of the assessment.</string>
     <string name="q9">What is the nature of parking on the street</string>
-    <string name="q9_help">Assessors should select which best reflects the nature of the parking in the meshblock. Residents only: The meshblock comprises entirely of either signs, white
-boxes or bays that indicate residents or permit holders only, or every residence has off-street parking. There is no other alternative form of parking allowed.
-Not residents only: All other forms of parking including unmarked stretches of street which have no rules prohibiting parking or areas where yellow lines prevent any parking</string>
+    <string name="q9_help">Assessors should select which best reflects the nature of the parking in the meshblock.
+        \n\n
+        Residents only: The meshblock comprises entirely of either signs, white boxes or bays that indicate residents or permit holders only, or every residence has off-street parking. There is no other alternative form of parking allowed.
+        \n\n
+        Not residents only: All other forms of parking including unmarked stretches of street which have no rules prohibiting parking or areas where yellow lines prevent any parking</string>
     <string name="q10"> Is there a continuous pavement, that is wide enough for two people or a wheelchair and is well maintained?</string>
-    <string name="q10_help">There are several elements to this assessment that need to be taken
-into account to provide an accurate observation.
-Firstly, assess whether there is a pavement in the meshblock. If there is no pavement you do not need to consider the other elements, just mark as absent. If there is a pavement then
-consider its continuity, width and level of maintenance as outlined below.
-If there is a pavement, assess whether it is continuous. Does it terminate within the meshblock? In other words, would pedestrians need to cross the road to continue on a pavement, or to continue without a pavement? If so, it is not continuous.
-        Judge whether the width of the pavement is sufficient for two people walking side by side, or for a wheelchair.
-        Assess the level of maintenance of the pavement. A well-maintained pavement would not present trips hazards, nor have cracks or loose paving slabs.
-If the pavement has any of these elements missing (it is not continuous or it is not wide enough for 2 people or a wheelchair or it is not well maintained)
-then use the middle category. Only if all elements are present can the ‘best’ score be given.</string>
+    <string name="q10_help"><![CDATA[There are several elements to this assessment that need to be taken into account to provide an accurate observation.
+\n
+\nFirstly, assess whether there is a pavement in the meshblock. If there is no pavement you do not need to consider the other elements, just mark as absent.
+\n
+\nIf there is a pavement then consider its continuity, width and level of maintenance as outlined below.
+\n
+\nIf there is a pavement, assess whether it is continuous. Does it terminate within the meshblock? In other words, would pedestrians need to cross the road to continue on a pavement, or to continue without a pavement? If so, it is not continuous.
+\n
+\nJudge whether the width of the pavement is sufficient for two people walking side by side, or for a wheelchair.
+\n
+\nAssess the level of maintenance of the pavement. A well-maintained pavement would not present trips hazards, nor have cracks or loose paving slabs.
+\n
+\nIf the pavement has any of these elements missing (it is not continuous or it is not wide enough for 2 people or a wheelchair or it is not well maintained) then use the middle category. Only if all elements are present can the ‘best’ score be given.]]></string>
     <string name="q11">How steep is the pavement and/or road?</string>
     <string name="q11_help">Assessors should record any incline in the pavement or road. This item should be assessed even if there is no pavement.
+        \n\n
+        
 Inclines with gradients ranging from flat to approximately 1:20 or 5% would be considered a medium level of incline
 and would not be considered to be problematic. Inclines with gradients greater than 1:20 or 5% would be considered a steep gradient which might cause difficulty.</string>
     <string name="q12">How well is the road maintained?</string>
     <string name="q12_help">This item refers to the maintenance of the road. The judgement of quality of the road should be made based on the extent to which there is damage in the road. For example, a small number of potholes (fewer than 4) would be considered moderately maintained. However, where potholes are present in greater numbers (5 or more) or are a substantial size and depth this would be considered poorly maintained.</string>
-
     <string name="q8_none">None</string>
     <string name="q8_one_to_eleven">One to eleven</string>
     <string name="q8_twelve_or_more">Twelve or more</string>
